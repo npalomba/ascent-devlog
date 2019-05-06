@@ -1,11 +1,68 @@
-<html>
-  <head>
-    <title>
-      Ascent
-    </title>
-  </head>
-  <body>
-    <h1>Hello there</h1>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Ascent</title>
+
+        <script type = "text/javascript" src = "scripts/siteSetupper.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src = "scripts/pageAnimations.js"></script>
+        <script src = "scripts/particles.js"></script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed:300,400" rel="stylesheet">
+        <link rel = "stylesheet" type = "text/css" href = "style.css"/>
+    </head>
+    <body onload = "setupSite()">
+        <nav id = "mainNav">
+            <table>
+                <tr>
+                    <td><a href = "index.html" id = "title">Ascent</a></td>
+                    <td><a href = "devlog.html">Devlog</a></td>
+                    <td><a href = "https://www.twitter.com/_unsettled_">Twitter</a></td>
+                    <td><a href = "contact.html">Contact</a></td>
+                </tr>
+            </table>
+        </nav>
+
+        <header>
+            <div id="particles-js"></div>
+            <div id = "headerBackground">
+                <img src = "imgs/logo.gif"/>
+                <a href = "#plot" id = "scrollDownAnchor">
+                    <img src = "imgs/downarrow.png" id = "scrollDown" class = "bounce"/>
+                </a>
+            </div>
+        </header>
+
+        <section id = "plot">
+            <span class = "textParagraph">
+                Welcome to the new world. Find your way through what used to be the Earth lifeforms and meet its new inhabitants. Explore a world full of life and secrets that will eventually tell you what happened years ago, causing the disaster you are now walking through, in order to rescue the last human beings.
+            </span>
+
+            <div class = "imgCentered">
+                <img src = "imgs/portrait.png" id = "homePortrait"/>
+            </div>
+
+        </section>
+
+        <section id = "recentPosts">
+            <div class = "imgCentered">
+                <h2>Recent devlog posts</h2>
+
+                <div class = "recentPostBackground" id = "recent0">
+                    <div class = "recentPost">
+                        <h3>Post title</h3>
+                    </div>
+                </div>
+
+                <div class = "recentPostBackground" id = "recent1">
+                    <div class = "recentPost">
+                        <h3>Post title</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
 </html>
-    
