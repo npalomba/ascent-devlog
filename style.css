@@ -201,6 +201,11 @@ section#recentPosts h2{
     color:white;
 }
 
+div#disqus_thread{
+    width:60%;
+    margin-top:10%;
+    margin-left:20%;
+}
 
 
 
