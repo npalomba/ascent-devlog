@@ -201,8 +201,36 @@ section#recentPosts h2{
     color:white;
 }
 
-form{
-    background-color:white;
+input {
+    font-family:"Calibri light";
+    font-size:20pt;
+    color: #040510;
+    outline: none;
+    border: none;
+}
+
+textarea {
+    outline: none;
+    border: none;
+}
+
+textarea:focus, input:focus {
+    border-color: transparent !important;
+}
+
+/*---------------------------------------------*/
+button {
+    outline: none !important;
+    border: none;
+    background: transparent;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+iframe {
+    border: none !important;
 }
 
 

@@ -10,8 +10,11 @@ function loadComments() {
         let object = jsonStuff[i];
         let staticManData = JSON.parse(httpGet(object["url"]));
         staticManData = atob(staticManData["content"]);
-
-        alert(getStaticmanField(staticManData, "thread:"));
+        getStaticmanField(staticManData, "message:");
+        /** TODO: scommenta questo
+         *
+         */
+        //alert(getStaticmanField(staticManData, "message:"));
     }
 }
 
@@ -25,15 +28,13 @@ function httpGet(theUrl) {
 function getStaticmanField(message, field) {
     let fields = message.split("\n");
 
-    alert(fields);
     for (let i=0; i<fields.length; i++) {
         if (fields[i].startsWith(field)) {
             let ret = fields[i].replace(field, "");
-            ret = ret.replace(/'/g, "");
+            ret.replace(/'/g, "");
 
             return ret;
         }
     }
 
-    return "AAAA";
 }
