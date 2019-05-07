@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta property = "commentThread" content = "0"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Ascent</title>
 
@@ -9,6 +10,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script src = "scripts/pageAnimations.js"></script>
         <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script type = "text/javascript" src = "scripts/commentLoader.js"></script>
 
         <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed:300,400" rel="stylesheet">
         <link rel = "stylesheet" type = "text/css" href = "style.css"/>
@@ -73,17 +75,6 @@
           <label><textarea name="fields[message]"></textarea>Message</label>
 
           <button type="submit">Go!</button>
-            
-            {% assign comments = site.data.comments[page.slug] | sort %}
-                {% for comment in comments %}
-                  {% assign avatar = comment[1].avatar %}
-                  {% assign email = comment[1].email %}
-                  {% assign name = comment[1].name %}
-                  {% assign url = comment[1].url %}
-                  {% assign date = comment[1].date %}
-                  {% assign message = comment[1].message %}
-                  {% include comment.html index=forloop.index avatar=avatar email=email name=name url=url date=date message=message %}
-                {% endfor %}
         </form>
     </body>
 </html>

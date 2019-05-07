@@ -1,10 +1,11 @@
 function setupSite() {
+    loadComments();
     setupSideNav();
 }
 
 function setupSideNav() {
     let sideNav = document.getElementById("recentPosts");
-    let recentPosts = readTextFile("scripts/recentLogs.txt");
+    let recentPosts = readTextFile("scripts/recentLogs.txt")
 }
 function readTextFile(file) {
     let rawFile = new XMLHttpRequest();
