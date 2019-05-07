@@ -10,7 +10,7 @@ function loadComments() {
                 // will loop through
                 var images = $(this).attr("href");
 
-                alert(images);
+                alert(images.toString());
 
             });
         },
