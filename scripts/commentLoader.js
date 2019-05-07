@@ -1,21 +1,39 @@
+let commentsDirectory = "https://api.github.com/repos/npalomba/ascent-devlog/contents/_data/comments/{{ page.slug }}";
+
 function loadComments() {
     let threadNumber = document.head.querySelector("[property~=commentThread][content]").content;
+    let jsonStuff = httpGet(commentsDirectory);
 
-    $.ajax({
-        url: "https://github.com/npalomba/ascent-devlog/tree/master/_data/comments/%7B%7B%20page.slug%20%7D%7D",
-        crossDomain: true,
-        dataType: "jsonp",
-        success: function(data){
-            $(data).find("a:contains(.yml)").each(function(){
-                // will loop through
-                var images = $(this).attr("href");
+    jsonStuff = JSON.parse(jsonStuff);
 
-                alert("success" + images.toString());
+    for (let i=0; i<jsonStuff.length; i++) {
+        let object = jsonStuff[i];
+        let staticManData = JSON.parse(httpGet(object["url"]));
+        staticManData = atob(staticManData["content"]);
 
-            });
-        },
-        error: function(xhr, status, error) {
-            alert(xhr.responseText);
+        alert(getStaticmanField(staticManData, "thread:"));
+    }
+}
+
+function httpGet(theUrl) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
+function getStaticmanField(message, field) {
+    let fields = message.split("\n");
+
+    alert(fields);
+    for (let i=0; i<fields.length; i++) {
+        if (fields[i].startsWith(field)) {
+            let ret = fields[i].replace(field, "");
+            ret = ret.replace(/'/g, "");
+
+            return ret;
         }
-    });
+    }
+
+    return "AAAA";
 }
