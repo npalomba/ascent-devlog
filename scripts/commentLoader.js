@@ -15,7 +15,7 @@ function loadComments() {
             });
         },
         error: function(xhr, status, error) {
-            alert(JSON.parse(xhr.responseText));
+            alert(xhr.responseText);
         }
     });
 }
