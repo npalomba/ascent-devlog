@@ -10,7 +10,9 @@ function loadComments() {
         let object = jsonStuff[i];
         let staticManData = JSON.parse(httpGet(object["url"]));
         staticManData = atob(staticManData["content"]);
-        getStaticmanField(staticManData, "message:");
+
+        let message = getStaticmanField(staticManData, "message:");
+        let name = getStaticmanField(staticManData, "name:");
         /** TODO: scommenta questo
          *
          */
