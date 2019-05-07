@@ -274,6 +274,18 @@ form#commentForm .inline {
     margin-right:2%;
 }
 
+div.comment{
+    padding:3%;
+    font-size:16pt;
+    border-left:5px solid #5bafda;
+    text-align:left;
+    margin-bottom:3%;
+}
+
+span.commentName{
+    font-weight:bold;
+}
+
 /*---------------------------------------------*/
 
 iframe {
