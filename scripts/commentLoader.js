@@ -10,12 +10,12 @@ function loadComments() {
                 // will loop through
                 var images = $(this).attr("href");
 
-                alert(images.toString());
+                alert("success" + images.toString());
 
             });
         },
         error: function(data) {
-            alert(data.toString());
+            alert("error" + data.toString());
         }
     });
 }
