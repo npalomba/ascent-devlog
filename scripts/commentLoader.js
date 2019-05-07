@@ -14,8 +14,8 @@ function loadComments() {
 
             });
         },
-        error: function(data) {
-            alert("error" + data.toString());
+        error: function(xhr, status, error) {
+            alert(JSON.parse(xhr.responseText));
         }
     });
 }
