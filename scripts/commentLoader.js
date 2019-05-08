@@ -22,7 +22,7 @@ function loadComments() {
         let commentThreadNumber = getStaticmanField(staticManData, "thread:");
         commentThreadNumber = commentThreadNumber.replace(/'/g, "");
 
-        alert(Number.parseInt(commentThreadNumber) + "," + Number.parseInt(threadNumber));
+        // alert(Number.parseInt(commentThreadNumber) + "," + Number.parseInt(threadNumber));
 
         if (Number.parseInt(commentThreadNumber) === Number.parseInt(threadNumber)) {
             let message = getStaticmanField(staticManData, "message:");
@@ -41,7 +41,7 @@ function loadComments() {
 
             let commentDate = document.createElement("span");
             commentDate.setAttribute("class", "commentDate");
-            commentDate.textContent =  curdate + ":";
+            commentDate.textContent =  curdate.getDate() + ":";
 
             let commentContent = document.createElement("div");
             commentContent.setAttribute("class", "commentBody");
@@ -71,12 +71,24 @@ function httpGet(theUrl) {
 }
 
 function getStaticmanField(message, field) {
-    let fields = message.split("\n");
+    let fields = message.split(/[\r\n]+/);
+    let ret = "";
 
     for (let i=0; i<fields.length; i++) {
         if (fields[i].startsWith(field)) {
-            let ret = fields[i].replace(field, "");
-            ret.replace(/'/g, "");
+            if (fields[i].endsWith(">-")) {
+                while (!fields[i].startsWith("name:") && i < fields.length) {
+                    i++;
+
+                    if (!fields[i].startsWith("name:")) {
+                        ret += fields[i];
+                    }
+                }
+            }
+            else {
+                ret = fields[i].replace(field, "");
+                ret.replace(/'/g, "");
+            }
 
             return ret;
         }
