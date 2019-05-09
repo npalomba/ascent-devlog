@@ -168,6 +168,10 @@ div.recentPost{
     transition: all 0.7s ease;
 }
 
+div.recentPost a{
+    text-decoration: none;
+}
+
 div.recentPost:hover {
     transform: scale(1.3);
 }

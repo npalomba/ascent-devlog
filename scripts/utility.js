@@ -4,3 +4,7 @@ function httpGet(theUrl) {
     xmlHttp.send( null );
     return xmlHttp.responseText;
 }
+
+function getContentFromGithubFile(file) {
+    return atob(file["content"]);
+}
