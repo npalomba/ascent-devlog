@@ -37,11 +37,11 @@ function loadComments() {
             curdate.setTime(Number.parseInt(date) * 1000);
 
             commentName.setAttribute("class", "commentName");
-            commentName.textContent = name + " commented on:";
+            commentName.textContent = name;
 
             let commentDate = document.createElement("span");
             commentDate.setAttribute("class", "commentDate");
-            commentDate.textContent =  curdate.getDate() + ":";
+            commentDate.textContent =  parseDate(curdate);
 
             let commentContent = document.createElement("div");
             commentContent.setAttribute("class", "commentBody");
@@ -63,11 +63,15 @@ function loadComments() {
     }
 }
 
-function httpGet(theUrl) {
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
-    xmlHttp.send( null );
-    return xmlHttp.responseText;
+function parseDate(date) {
+    let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let months = ['January', "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    let day = days[date.getDay()];
+    let month = months[date.getMonth()];
+    let year = date.getFullYear();
+
+    return " commented on: " + day + " " + month + " " + year + " at " + date.getHours() + ":" + date.getMinutes();
 }
 
 function getStaticmanField(message, field) {
