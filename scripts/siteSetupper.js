@@ -6,41 +6,45 @@ function setupSite() {
 }
 
 function setupSideNav() {
-    let sideNav = document.getElementById("recentPosts");
-    let recentPosts = httpGet(recentLogsDirectory);
-    let jsonRecentLogs = JSON.parse(recentPosts);
-    let recentPostsContent = getContentFromGithubFile(jsonRecentLogs);
-    let recentPostsLines = recentPostsContent.split(/[\r\n]+/);
-    let recentLogsContainer = document.getElementById("recentPosts").children[0];
+    let recentLogsContainer = document.getElementById("recentPosts");
 
-    for (let i=0; i<recentPostsLines.length; i++) {
-        let postFields = recentPostsLines[i].split(",");
-        let url = postFields[0] + ".html";
-        let title = postFields[1];
-        let imgURL = postFields[2];
+    if (recentLogsContainer != null) {
+        recentLogsContainer = recentLogsContainer.children[0];
+        let recentPosts = httpGet(recentLogsDirectory);
+        let jsonRecentLogs = JSON.parse(recentPosts);
+        let recentPostsContent = getContentFromGithubFile(jsonRecentLogs);
+        let recentPostsLines = recentPostsContent.split(/[\r\n]+/);
 
-        /* Creating container with background image */
-        let postRoot = document.createElement("div");
-        postRoot.setAttribute("class", "recentPostBackground");
-        postRoot.style.backgroundImage = "url('" + imgURL + "')";
 
-        /* Creating actual container */
-        let postContainer = document.createElement("div");
-        postContainer.setAttribute("class", "recentPost");
+        for (let i=0; i<recentPostsLines.length; i++) {
+            let postFields = recentPostsLines[i].split(",");
+            let url = postFields[0] + ".html";
+            let title = postFields[1];
+            let imgURL = postFields[2];
 
-        /* Adding title */
-        let postTitle = document.createElement("h3");
-        let postURL = document.createElement("a");
-        postURL.setAttribute("href", url);
-        postURL.appendChild(postTitle);
-        postTitle.textContent = title;
+            /* Creating container with background image */
+            let postRoot = document.createElement("div");
+            postRoot.setAttribute("class", "recentPostBackground");
+            postRoot.style.backgroundImage = "url('" + imgURL + "')";
 
-        /* Building complete post */
-        postRoot.appendChild(postContainer);
-        postContainer.append(postURL);
+            /* Creating actual container */
+            let postContainer = document.createElement("div");
+            postContainer.setAttribute("class", "recentPost");
 
-        /* Adding post to section */
-        recentLogsContainer.appendChild(postRoot);
+            /* Adding title */
+            let postTitle = document.createElement("h3");
+            let postURL = document.createElement("a");
+            postURL.setAttribute("href", url);
+            postURL.appendChild(postTitle);
+            postTitle.textContent = title;
+
+            /* Building complete post */
+            postRoot.appendChild(postContainer);
+            postContainer.append(postURL);
+
+            /* Adding post to section */
+            recentLogsContainer.appendChild(postRoot);
+        }
     }
 }
 

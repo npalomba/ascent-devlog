@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta property = "commentThread" content = "1"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Ascent</title>
+
+        <script type = "text/javascript" src = "scripts/siteSetupper.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script src = "scripts/pageAnimations.js"></script>
+        <script src = "scripts/utility.js"></script>
+        <script type = "text/javascript" src = "scripts/commentLoader.js"></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed:300,400" rel="stylesheet">
+        <link rel = "stylesheet" type = "text/css" href = "style.css"/>
+    </head>
+    <body onload = "setupSite()">
+        <nav id = "mainNav">
+            <table>
+                <tr>
+                    <td><a href = "index.html" id = "title">Ascent</a></td>
+                    <td><a href = "devlog.html">Devlog</a></td>
+                    <td><a href = "https://www.twitter.com/_unsettled_">Twitter</a></td>
+                    <td><a href = "contact.html">Contact</a></td>
+                </tr>
+            </table>
+        </nav>
+        sassassassassassassassassas<br>
+        <section id = "comments">
+            <div id = "addComment">
+                <form id = "commentForm" method="POST" action="https://dev.staticman.net/v3/entry/github/npalomba/ascent-devlog/master/comments">
+                    <!-- e.g. "2016-01-02-this-is-a-post" -->
+                    <input type="hidden" name="fields[thread]" value="0">
+                    <input name="options[slug]" type="hidden" value="{{ page.slug }}">
+                    <p>Add a comment!</p>
+                    <textarea name="fields[message]" id = "commentArea" style = "width:100%;height:100px;"></textarea>
+                    <p class = "inline">Name</p>
+                    <input name="fields[name]" type="text" class = "inline">
+                    <p class = "inline">E-mail</p>
+                    <input name="fields[email]" type="email" class = "inline">
+
+                    <button type="submit">Submit comment</button>
+                </form>
+            </div>
+
+            <div id = "existingComments">
+            </div>
+        </section>
+    </body>
+</html>

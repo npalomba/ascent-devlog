@@ -8,3 +8,10 @@ function httpGet(theUrl) {
 function getContentFromGithubFile(file) {
     return atob(file["content"]);
 }
+
+function getPageName() {
+    let path = window.location.pathname;
+    let page = path.split("/").pop();
+
+    return page;
+}

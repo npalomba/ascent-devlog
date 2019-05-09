@@ -1,7 +1,7 @@
 let commentsDirectory = "https://api.github.com/repos/npalomba/ascent-devlog/contents/_data/comments/{{ page.slug }}";
 
 function loadComments() {
-    let threadNumber = document.head.querySelector("[property~=commentThread][content]").content;
+    var threadNumber = document.head.querySelector("[property~=commentThread][content]").content;
     threadNumber = threadNumber.replace(/'/g, "");
     let jsonStuff = httpGet(commentsDirectory);
     let commentContainer = document.getElementById("existingComments");
@@ -52,9 +52,6 @@ function loadComments() {
             root.appendChild(commentContent);
 
             commentContainer.appendChild(root);
-        }
-        else {
-            alert("oh no");
         }
         /** TODO: scommenta questo
          *

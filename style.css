@@ -288,6 +288,11 @@ div.comment{
 
 span.commentName{
     font-weight:bold;
+    color:#5bafda;
+}
+
+span.commentDate{
+    color:#5bafda;
 }
 
 /*---------------------------------------------*/
