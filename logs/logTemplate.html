@@ -1,59 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <!--TO MODIFY -->
-    <meta property = "commentThread" content = "1"/>
-    <!--TO MODIFY -->
-    <title>Log Title - Ascent</title>
+    <head>
+        <meta charset="UTF-8">
+        <!--TO MODIFY -->
+        <meta property = "commentThread" content = "2"/>
+        <!--TO MODIFY -->
+        <title>Log Title - Ascent</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script type = "text/javascript" src = "scripts/siteSetupper.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-    <script src = "scripts/pageAnimations.js"></script>
-    <script src = "scripts/utility.js"></script>
-    <script type = "text/javascript" src = "scripts/commentLoader.js"></script>
+        <script type = "text/javascript" src = "../scripts/siteSetupper.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script src = "../scripts/pageAnimations.js"></script>
+        <script src = "../scripts/utility.js"></script>
+        <script type = "text/javascript" src = "../scripts/commentLoader.js"></script>
 
-    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed:300,400" rel="stylesheet">
-    <link rel = "stylesheet" type = "text/css" href = "style.css"/>
-</head>
-<body onload = "setupSite()">
-    <nav id = "mainNav">
-        <table>
-            <tr>
-                <td><a href = "index.html" id = "title">Ascent</a></td>
-                <td><a href = "devlog.html">Devlog</a></td>
-                <td><a href = "https://www.twitter.com/_unsettled_">Twitter</a></td>
-                <td><a href = "contact.html">Contact</a></td>
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed:300,400" rel="stylesheet">
+        <link rel = "stylesheet" type = "text/css" href = "../style.css"/>
+    </head>
+    <body onload = "setupSite()" id = "body">
 
-            </tr>
-        </table>
-    </nav>
+        <!-- MODIFY -->
+        <section id = "logBody" class = "mainSection">
+            <!--TO MODIFY -->
+            <h1 class = "logTitle">Insert log title here</h1>
 
-    <section id = "logs" class = "mainSection">
-        <h2 class = "bigH2">Latest devlogs: </h2>
-    </section>
+            <!--TO MODIFY -->
+            <div class = "logContent">
+                <!-- TO MODIFY (intro) -->
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tempus odio mi, ac interdum massa posuere quis.
+                Sed ultrices eleifend interdum. Vivamus nunc purus, euismod vitae sem ut, malesuada lobortis enim.
+                In pharetra lobortis velit, iaculis consectetur sem. Sed tristique finibus egestas.
+                Sed nec turpis eu leo pretium suscipit id eget neque. Quisque eu aliquet ante.
+                Fusce pellentesque mattis erat, at aliquet erat.
 
-    <section id = "comments">
-        <div id = "addComment">
-            <form id = "commentForm" method="POST" action="https://dev.staticman.net/v3/entry/github/npalomba/ascent-devlog/master/comments">
-                <!-- e.g. "2016-01-02-this-is-a-post" -->
-                <input type="hidden" name="fields[thread]" value="1">
-                <input name="options[slug]" type="hidden" value="{{ page.slug }}">
-                <p>Add a comment!</p>
-                <textarea name="fields[message]" id = "commentArea" style = "width:100%;height:100px;"></textarea>
-                <p class = "inline">Name</p>
-                <input name="fields[name]" type="text" class = "inline">
-                <p class = "inline">E-mail</p>
-                <input name="fields[email]" type="email" class = "inline">
+                <h2 class = "logSubtitle">Insert subtitle here</h2>
 
-                <button type="submit">Submit comment</button>
-            </form>
-        </div>
+                Sed non magna massa. In at nisl mi. Aliquam feugiat lorem et dolor hendrerit sagittis.
+                Aenean vulputate mauris at molestie efficitur. Quisque id arcu porttitor, faucibus arcu eu, consequat dui.
+                Maecenas eu nisi in justo varius tincidunt. Praesent vehicula gravida ante nec ultrices.
+                Nulla ligula nisl, ultrices eget magna at, placerat porta massa.
+                Vivamus diam felis, tristique sed consequat at, ullamcorper in augue.
 
-        <div id = "existingComments">
-        </div>
-    </section>
+                <div class = "captionedImage">
+                    <img class = "singleLogImage" src = "../imgs/portrait.png"/>
+                    <p class = "imageCaption">This is a test caption for the above picture</p>
+                </div>
+
+                Integer condimentum quis odio vitae lobortis. Vivamus rhoncus nisi fermentum nisl maximus imperdiet.
+                Mauris vel tempus tortor, sit amet ultricies leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                In dictum felis ante, sed fermentum nunc scelerisque eu. Praesent eget egestas tellus, sed dictum justo.
+                Donec arcu nibh, posuere eleifend bibendum ut, bibendum in purus. Vestibulum id scelerisque eros, et tristique nibh.
+                Phasellus ipsum elit, pellentesque posuere aliquam in, porta non massa. Pellentesque non elit non massa dictum sodales.
+                Vivamus blandit arcu ligula, sit amet posuere tellus tempus vitae.
+                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+                Nullam rutrum et lorem nec varius. Sed laoreet non ipsum at maximus.
+                Praesent iaculis interdum porta.
+
+                <h2 class = "logSubtitle">Insert subtitle here</h2>
+
+                Quisque ut libero molestie, gravida neque nec, commodo purus.
+                Suspendisse faucibus fringilla odio nec interdum.
+                Vivamus commodo arcu lobortis risus tincidunt elementum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Donec euismod iaculis facilisis.
+                Nam erat ante, ultricies eu malesuada ac, blandit sed dolor.
+                Maecenas vestibulum enim hendrerit sodales tincidunt.
+                Vestibulum quis elit vestibulum, sagittis orci venenatis, efficitur dui.
+
+                <div class = "captionedImage">
+                    <img class = "singleLogImage" src = "../imgs/portrait.png"/>
+                    <p class = "imageCaption">This is a test caption for the above picture</p>
+                </div>
+
+                Curabitur dapibus nisl eu ex tempor, a viverra nisl dapibus.
+                Vestibulum posuere nec nisl quis ultrices. Suspendisse iaculis dolor et porta tempus.
+                Ut vitae pulvinar neque. Aenean a volutpat libero.
+                Nulla pellentesque, arcu sit amet porta porttitor, lacus magna accumsan lorem, vulputate viverra est enim ultrices mauris.
+                Sed feugiat diam neque, at commodo neque mattis vel. Nunc diam libero, ultricies et iaculis et, auctor quis nisl.
+                Nam et tristique augue. Sed quis tincidunt turpis, vel tincidunt ante. Integer mollis velit a elit gravida cursus.
+                Aliquam dapibus nunc eget orci vehicula, non auctor mi aliquet. Integer semper enim sit amet auctor lacinia.
+            </div>
+        </section>
+
+        <section id = "comments">
+            <div id = "addComment">
+                <form id = "commentForm" method="POST" action="https://dev.staticman.net/v3/entry/github/npalomba/ascent-devlog/master/comments">
+                    <!-- e.g. "2016-01-02-this-is-a-post" -->
+                    <input type="hidden" name="fields[thread]" value="2">
+                    <input name="options[slug]" type="hidden" value="{{ page.slug }}">
+                    <p>Add a comment!</p>
+                    <textarea name="fields[message]" id = "commentArea" style = "width:100%;height:100px;"></textarea>
+                    <p class = "inline">Name</p>
+                    <input name="fields[name]" type="text" class = "inline">
+                    <p class = "inline">E-mail</p>
+                    <input name="fields[email]" type="email" class = "inline">
+
+                    <button type="submit">Submit comment</button>
+                </form>
+            </div>
+
+            <div id = "existingComments">
+            </div>
+        </section>
     </body>
 </html>

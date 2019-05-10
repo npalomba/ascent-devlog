@@ -15,3 +15,7 @@ function getPageName() {
 
     return page;
 }
+
+function getPath() {
+    return window.location.pathname;
+}
