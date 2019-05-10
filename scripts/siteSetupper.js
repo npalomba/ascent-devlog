@@ -3,8 +3,16 @@ let logsDirectory = "https://api.github.com/repos/npalomba/ascent-devlog/content
 
 function setupSite() {
     loadComments();
+    addTopNav();
     setupSideNav();
     addLogs();
+}
+
+function addTopNav() {
+    let navRaw = getContentFromGithubFile(JSON.parse(httpGet("https://api.github.com/repos/npalomba/ascent-devlog/contents/nav.html")));
+    let toAppendTo = document.getElementById("body");
+
+    toAppendTo.innerHTML = navRaw + toAppendTo.innerHTML;
 }
 
 function addLogs() {
@@ -22,7 +30,7 @@ function addLogs() {
                 let imgURL = logParams[0];
                 let title = logParams[1];
                 let content = logParams[2];
-
+                let url = logParams[3];
 
                 content = content.substr(0, 168);
                 content += "...";
@@ -43,12 +51,18 @@ function addLogs() {
                 span.setAttribute("class", "logContent");
                 h2.innerText = title;
                 span.innerText = content;
-                let link =
+                let link = document.createElement("a");
+                let titleLink = document.createElement("a");
+                titleLink.setAttribute("href", url);
+                titleLink.appendChild(h2);
+                link.setAttribute("href", url);
+                link.innerText = "(read more)";
+                span.appendChild(link);
 
                 /* Building the div */
                 logDiv.appendChild(img);
                 logDiv.appendChild(logContent);
-                logContent.appendChild(h2);
+                logContent.appendChild(titleLink);
                 logContent.appendChild(span);
 
                 /* Appending div to contaienr */

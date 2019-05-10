@@ -26,6 +26,11 @@ function loadComments() {
 
         if (Number.parseInt(commentThreadNumber) === Number.parseInt(threadNumber)) {
             let message = getStaticmanField(staticManData, "message:");
+
+            if (message.startsWith("\'")) {
+                alert("Sas");
+                message = message.substr(1, message.length);
+            }
             let name = getStaticmanField(staticManData, "name:");
             let date = getStaticmanField(staticManData, "date:");
 

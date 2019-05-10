@@ -4,7 +4,7 @@
 (function($) {
     $(document).ready(function(){
         $(window).scroll(function(){
-            if ($(this).scrollTop() > 200) {
+            if ($(this).scrollTop() > 10) {
                 $('#mainNav').fadeIn(500);
             } else {
                 $('#mainNav').fadeOut(500);

@@ -335,12 +335,25 @@ div.logTextContent {
     display:table-cell;
 }
 
+div.logTextContent a{
+    color:white;
+    transition: color 0.5s;
+}
+
+div.logTextContent a:hover {
+    color:#5bafda;
+}
+
 img.logImage {
     object-fit: scale-down;
     width:25%;
     position:relative;
     float:left;
     display:table-cell;
+}
+
+span.logContent a{
+    color:white;
 }
 
 h2.bigH2 {

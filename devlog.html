@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta property = "commentThread" content = "1"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Ascent</title>
+        <title>Devlogs - Ascent</title>
 
         <script type = "text/javascript" src = "scripts/siteSetupper.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -23,6 +23,7 @@
                     <td><a href = "devlog.html">Devlog</a></td>
                     <td><a href = "https://www.twitter.com/_unsettled_">Twitter</a></td>
                     <td><a href = "contact.html">Contact</a></td>
+
                 </tr>
             </table>
         </nav>
@@ -35,7 +36,7 @@
             <div id = "addComment">
                 <form id = "commentForm" method="POST" action="https://dev.staticman.net/v3/entry/github/npalomba/ascent-devlog/master/comments">
                     <!-- e.g. "2016-01-02-this-is-a-post" -->
-                    <input type="hidden" name="fields[thread]" value="0">
+                    <input type="hidden" name="fields[thread]" value="1">
                     <input name="options[slug]" type="hidden" value="{{ page.slug }}">
                     <p>Add a comment!</p>
                     <textarea name="fields[message]" id = "commentArea" style = "width:100%;height:100px;"></textarea>
