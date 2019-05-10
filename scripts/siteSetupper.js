@@ -1,5 +1,5 @@
 let recentLogsDirectory = "https://api.github.com/repos/npalomba/ascent-devlog/contents/recentLogs.txt";
-let logsDirectory = "https://api.github.com/repos/npalomba/ascent-devlog/contents/allLogs.txt";
+let logsDirectory = "https://api.github.com/repos/npalomba/ascent-devlog/contents/allLogs";
 
 function setupSite() {
     loadComments();
@@ -11,16 +11,21 @@ function addLogs() {
     let logSection = document.getElementById("logs");
 
     if (logSection != null && logSection !== undefined) {
-        let logsContent = httpGet(logsDirectory);
+        let logsContent = getContentFromGithubFile(JSON.parse(httpGet(logsDirectory)));
+        logsContent = logsContent.replace(/>/g, "");
         let logLines = logsContent.split(/[\r\n]+/);
 
         for (let i=0; i<logLines.length; i++) {
             if (logLines[i] !== "") {
                 /* Getting data from the current line */
-                let logParams = logLines[i].split(",");
+                let logParams = logLines[i].split(/\|/g);
                 let imgURL = logParams[0];
                 let title = logParams[1];
                 let content = logParams[2];
+
+
+                content = content.substr(0, 168);
+                content += "...";
 
                 /* Creating necessary HTML elements */
                 let logDiv = document.createElement("div");
@@ -38,6 +43,7 @@ function addLogs() {
                 span.setAttribute("class", "logContent");
                 h2.innerText = title;
                 span.innerText = content;
+                let link =
 
                 /* Building the div */
                 logDiv.appendChild(img);

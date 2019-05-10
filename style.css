@@ -311,7 +311,7 @@ section#logs {
     margin-left:5%;
     padding:5%;
     vertical-align:middle;
-    height:100%;
+    height:auto;
 }
 
 div.log{
@@ -337,10 +337,14 @@ div.logTextContent {
 
 img.logImage {
     object-fit: scale-down;
-    height:19%;
+    width:25%;
     position:relative;
     float:left;
     display:table-cell;
+}
+
+h2.bigH2 {
+    font-size:45pt;
 }
 
 /*---------------------------------------------*/
