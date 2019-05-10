@@ -1,8 +1,55 @@
 let recentLogsDirectory = "https://api.github.com/repos/npalomba/ascent-devlog/contents/recentLogs.txt";
+let logsDirectory = "https://api.github.com/repos/npalomba/ascent-devlog/contents/allLogs.txt";
 
 function setupSite() {
     loadComments();
     setupSideNav();
+    addLogs();
+}
+
+function addLogs() {
+    let logSection = document.getElementById("logs");
+
+    if (logSection != null && logSection !== undefined) {
+        let logsContent = httpGet(logsDirectory);
+        let logLines = logsContent.split(/[\r\n]+/);
+
+        for (let i=0; i<logLines.length; i++) {
+            if (logLines[i] !== "") {
+                /* Getting data from the current line */
+                let logParams = logLines[i].split(",");
+                let imgURL = logParams[0];
+                let title = logParams[1];
+                let content = logParams[2];
+
+                /* Creating necessary HTML elements */
+                let logDiv = document.createElement("div");
+                let img = document.createElement("img");
+                let logContent = document.createElement("div");
+                let h2 = document.createElement("h2");
+                let span = document.createElement("span");
+
+                /* Setting attributes */
+                logDiv.setAttribute("class", "log");
+                img.setAttribute("src", imgURL);
+                img.setAttribute("class", "logImage");
+                logContent.setAttribute("class", "logTextContent");
+                h2.setAttribute("class", "logTitle");
+                span.setAttribute("class", "logContent");
+                h2.innerText = title;
+                span.innerText = content;
+
+                /* Building the div */
+                logDiv.appendChild(img);
+                logDiv.appendChild(logContent);
+                logContent.appendChild(h2);
+                logContent.appendChild(span);
+
+                /* Appending div to contaienr */
+                logSection.appendChild(logDiv);
+            }
+        }
+    }
 }
 
 function setupSideNav() {
