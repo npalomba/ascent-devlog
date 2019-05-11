@@ -2,7 +2,9 @@ let recentLogsDirectory = "https://api.github.com/repos/npalomba/ascent-devlog/c
 let logsDirectory = "https://api.github.com/repos/npalomba/ascent-devlog/contents/allLogs";
 
 function setupSite() {
-    loadComments();
+    if (typeof(commentLoaderLoaded) !== "undefined") {
+        loadComments();
+    }
     addTopNav();
     setupSideNav();
     addLogs();
@@ -13,7 +15,7 @@ function setupSite() {
 function addTopNav() {
     let navRaw = getContentFromGithubFile(JSON.parse(httpGet("https://api.github.com/repos/npalomba/ascent-devlog/contents/nav.html")));
     let toAppendTo = document.getElementById("body");
-
+    console.log("Adding nav");
     toAppendTo.innerHTML = navRaw + toAppendTo.innerHTML;
 }
 

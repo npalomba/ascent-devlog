@@ -3,13 +3,23 @@
  */
 (function($) {
     $(document).ready(function(){
-        $(window).scroll(function(){
-            if ($(this).scrollTop() > 10) {
-                $('#mainNav').fadeIn(500);
-            } else {
-                $('#mainNav').fadeOut(500);
+        let compareResult = getPageName().localeCompare("contact.html");
+        setTimeout(function() {
+            if (compareResult !== 0) {
+                $(window).scroll(function () {
+                    if ($(this).scrollTop() > 10) {
+                        $('#mainNav').fadeIn(500);
+                    } else {
+                        $('#mainNav').fadeOut(500);
+                    }
+                });
             }
-        });
+            else {
+                $('#mainNav').fadeIn(100);
+            }
+
+        }, 100);
+
     });
 })(jQuery);
 
@@ -31,7 +41,6 @@ function initScrollDownArrow() {
             $('html, body').animate({
                 scrollTop: $(hash).offset().top
             }, 800, "swing", function () {
-
                 // Add hash (#) to URL when done scrolling (default click behavior)
                 window.location.hash = hash;
             });

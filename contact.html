@@ -13,7 +13,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script src = "scripts/pageAnimations.js"></script>
         <script src = "scripts/utility.js"></script>
-        <script type = "text/javascript" src = "scripts/commentLoader.js"></script>
 
         <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed:300,400" rel="stylesheet">
         <link rel = "stylesheet" type = "text/css" href = "style.css"/>
@@ -22,41 +21,31 @@
         <section id = "contactBody" class = "mainSection">
             <div class = "contactInfos">
                 <h1 class = "logTitle">How to contact me?</h1>
-                <span class = "contactField">E-mail: </span>
-                <span class = "contactValue"></span>
+                <hr class = "dividerRow">
+                <div class = "contactPair">
+                    <span class = "contactField">E-mail: </span>
+                    <span class = "contactValue">unsettledgames@gmail.com</span>
+                </div>
 
-                <span class = "contactField">Twitter: </span>
-                <span class = "contactValue">@_unsettled_</span>
+                <div class = "contactPair">
+                    <span class = "contactField">Twitter: </span>
+                    <span class = "contactValue">@_unsettled_</span>
+                </div>
 
-                <span class = "contactField">Discord: </span>
-                <span class = "contactValue">@Unsettled</span>
+                <div class = "contactPair">
+                    <span class = "contactField">Discord: </span>
+                    <span class = "contactValue">@Unsettled</span>
+                </div>
 
-                <span class = "contactField">Github: </span>
-                <span class = "contactValue">@unsettledgames</span>
+                <div class = "contactPair">
+                    <span class = "contactField">Github: </span>
+                    <span class = "contactValue">@unsettledgames</span>
+                </div>
 
-                <span class = "contactField">Reddit: </span>
-                <span class = "contactValue">@Fintaman</span>
-            </div>
-        </section>
-
-        <section id = "comments">
-            <div id = "addComment">
-                <form id = "commentForm" method="POST" action="https://dev.staticman.net/v3/entry/github/npalomba/ascent-devlog/master/comments">
-                    <!-- e.g. "2016-01-02-this-is-a-post" -->
-                    <input type="hidden" name="fields[thread]" value="3">
-                    <input name="options[slug]" type="hidden" value="{{ page.slug }}">
-                    <p>Add a comment!</p>
-                    <textarea name="fields[message]" id = "commentArea" style = "width:100%;height:100px;"></textarea>
-                    <p class = "inline">Name</p>
-                    <input name="fields[name]" type="text" class = "inline">
-                    <p class = "inline">E-mail</p>
-                    <input name="fields[email]" type="email" class = "inline">
-
-                    <button type="submit">Submit comment</button>
-                </form>
-            </div>
-
-            <div id = "existingComments">
+                <div class = "contactPair">
+                    <span class = "contactField">Reddit: </span>
+                    <span class = "contactValue">@Fintaman</span>
+                </div>
             </div>
         </section>
     </body>

@@ -1,3 +1,4 @@
+var commentLoaderLoaded = true;
 let commentsDirectory = "https://api.github.com/repos/npalomba/ascent-devlog/contents/_data/comments/{{ page.slug }}";
 
 function loadComments() {
