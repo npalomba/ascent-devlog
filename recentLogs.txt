@@ -1,2 +1,2 @@
-0,Let's go!,imgs/portrait.png
+letsgo,Let's go!,imgs/portrait.png
 1,Test,https://imgur.com/jdJ7S3K
