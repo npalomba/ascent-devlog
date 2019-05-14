@@ -10,6 +10,7 @@ function setupSite() {
     addLogs();
     setupParticles();
     initReadyEvents();
+    addSocialThumbnails();
 }
 
 function addTopNav() {

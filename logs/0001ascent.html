@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--TO MODIFY -->
+    <meta property = "commentThread" content = "2"/>
+    <!--TO MODIFY -->
+    <title>Log Title - Ascent</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type = "text/javascript" src = "../scripts/siteSetupper.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src = "../scripts/pageAnimations.js"></script>
+    <script src = "../scripts/utility.js"></script>
+    <script type = "text/javascript" src = "../scripts/commentLoader.js"></script>
+    <!-- Adds all the meta tags for the social network share previews -->
+    <script type = "text/javascript" src = "../scripts/socialThumbnailAdder.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed:300,400" rel="stylesheet">
+    <link rel = "stylesheet" type = "text/css" href = "../style.css"/>
+</head>
+<body onload = "setupSite()" id = "body">
+
+<!-- MODIFY -->
+<section id = "logBody" class = "mainSection">
+    <!--TO MODIFY -->
+    <h1 class = "logTitle">Insert log title here</h1>
+
+    <!--TO MODIFY -->
+    <div class = "logContent">
+        <!-- TO MODIFY (intro) -->
+        <h2 class = "logSubtitle">Inspiration</h2>
+
+        Ascent will (hopefully) be an interesting game. I built my videogame culture around <a href = "https://en.wikipedia.org/wiki/Metroidvania">
+        metroidvanias</a> and I absolutely love this genre, I've played every single Metroid game and what I love the most about
+        the series (and about the genre) is the sense of discovery they deliver to the player. It's always a great experience to
+        explore an unknown world and open new paths that were previously unaccessable; sometimes I would love to have an infinite
+        world to roam in.
+
+        <div class = "captionedImage">
+            <img class = "singleLogImage" src = "../imgs/0001ascent/super_metroid.jpg"/>
+            <p class = "imageCaption">Super Metroid, one of the best games I've ever played</p>
+        </div>
+
+        Unfortunately, it is impossible to have such a huge map. But it is possible to give the illusion of something infinite:
+        procedural generation is the answer. It is also a thing that really fascinates me, I like to think of it like a computer
+        finally being able to make something creative, with some help from the programmer :)<br>
+        It is also a great way to improve someone's programming skills and it sometimes leads to unexpected results.
+
+        <div class = "captionedImage">
+            <img class = "singleLogImage" src = "../imgs/0001ascent/procedural.gif"/>
+            <p class = "imageCaption">A few days ago I stumbled on this wonderful tweet</p>
+        </div>
+
+        <h2 class = "logSubtitle">Ascent: basic structure</h2>
+
+        You've probably already guessed that Ascent will be a Metroidvania with procedurally generated elements. My plan is
+        to use a fixed map, that I will personally design, along with a procedurally generated area (one for each hand-drawn zone).
+        As the player completes those levels, their size and their difficulty increases, but items become rarer and so is
+        the final rewards; submissions will also be set in these areas.
+        <br><br>
+        I've already started building a level generator! At the moment it is a pretty basic tool, it just generates rooms and
+        corridors, but, for example, doesn't handle collisions between rooms. Which may not necessarily be a bad thing, but
+        the problem is that I have no control over this issue, which may happen when I don't want it to.
+
+
+        <div class = "captionedImage">
+            <img class = "singleLogImage" src = "../imgs/portrait.png"/>
+            <p class = "imageCaption">This is a test caption for the above picture</p>
+        </div>
+
+        Integer condimentum quis odio vitae lobortis. Vivamus rhoncus nisi fermentum nisl maximus imperdiet.
+        Mauris vel tempus tortor, sit amet ultricies leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        In dictum felis ante, sed fermentum nunc scelerisque eu. Praesent eget egestas tellus, sed dictum justo.
+        Donec arcu nibh, posuere eleifend bibendum ut, bibendum in purus. Vestibulum id scelerisque eros, et tristique nibh.
+        Phasellus ipsum elit, pellentesque posuere aliquam in, porta non massa. Pellentesque non elit non massa dictum sodales.
+        Vivamus blandit arcu ligula, sit amet posuere tellus tempus vitae.
+        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+        Nullam rutrum et lorem nec varius. Sed laoreet non ipsum at maximus.
+        Praesent iaculis interdum porta.
+
+        <h2 class = "logSubtitle">Insert subtitle here</h2>
+
+        Quisque ut libero molestie, gravida neque nec, commodo purus.
+        Suspendisse faucibus fringilla odio nec interdum.
+        Vivamus commodo arcu lobortis risus tincidunt elementum.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Donec euismod iaculis facilisis.
+        Nam erat ante, ultricies eu malesuada ac, blandit sed dolor.
+        Maecenas vestibulum enim hendrerit sodales tincidunt.
+        Vestibulum quis elit vestibulum, sagittis orci venenatis, efficitur dui.
+
+        <div class = "captionedImage">
+            <img class = "singleLogImage" src = "../imgs/portrait.png"/>
+            <p class = "imageCaption">This is a test caption for the above picture</p>
+        </div>
+
+        Curabitur dapibus nisl eu ex tempor, a viverra nisl dapibus.
+        Vestibulum posuere nec nisl quis ultrices. Suspendisse iaculis dolor et porta tempus.
+        Ut vitae pulvinar neque. Aenean a volutpat libero.
+        Nulla pellentesque, arcu sit amet porta porttitor, lacus magna accumsan lorem, vulputate viverra est enim ultrices mauris.
+        Sed feugiat diam neque, at commodo neque mattis vel. Nunc diam libero, ultricies et iaculis et, auctor quis nisl.
+        Nam et tristique augue. Sed quis tincidunt turpis, vel tincidunt ante. Integer mollis velit a elit gravida cursus.
+        Aliquam dapibus nunc eget orci vehicula, non auctor mi aliquet. Integer semper enim sit amet auctor lacinia.
+
+        <br><br>05/14/2019
+    </div>
+</section>
+
+<section id = "comments">
+    <div id = "addComment">
+        <form id = "commentForm" method="POST" action="https://dev.staticman.net/v3/entry/github/npalomba/ascent-devlog/master/comments">
+            <!-- e.g. "2016-01-02-this-is-a-post" -->
+            <input type="hidden" name="fields[thread]" value="2">
+            <input name="options[slug]" type="hidden" value="{{ page.slug }}">
+            <p>Add a comment!</p>
+            <textarea name="fields[message]" id = "commentArea" style = "width:100%;height:100px;"></textarea>
+            <p class = "inline">Name</p>
+            <input name="fields[name]" type="text" class = "inline">
+            <p class = "inline">E-mail</p>
+            <input name="fields[email]" type="email" class = "inline">
+
+            <button type="submit">Submit comment</button>
+        </form>
+    </div>
+
+    <div id = "existingComments">
+    </div>
+</section>
+</body>
+</html>

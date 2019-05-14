@@ -391,6 +391,15 @@ div.captionedImage {
     margin-bottom:5%;
 }
 
+span.logDate{
+    display:block;
+    position:relative;
+    width:100%;
+    text-align:right;
+    font-style:italic;
+    font-size:18pt;
+}
+
 /*---------------------------------------CONTACT SECTION----------------------------*/
 section#contactBody{
     position:relative;

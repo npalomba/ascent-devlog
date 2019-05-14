@@ -1,2 +1,2 @@
-letsgo,Let's go!,imgs/portrait.png
-1,Test,https://imgur.com/jdJ7S3K
+0001ascent,Ascent,imgs/Logo.gif
+0000letsgo,Let's go!,imgs/portrait.png

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--TO MODIFY -->
+    <meta property = "commentThread" content = "2"/>
+    <!--TO MODIFY -->
+    <title>Let's go - Ascent</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type = "text/javascript" src = "../scripts/siteSetupper.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src = "../scripts/pageAnimations.js"></script>
+    <script src = "../scripts/utility.js"></script>
+    <script type = "text/javascript" src = "../scripts/commentLoader.js"></script>
+    <!-- Adds all the meta tags for the social network share previews -->
+    <script type = "text/javascript" src = "../scripts/socialThumbnailAdder.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed:300,400" rel="stylesheet">
+    <link rel = "stylesheet" type = "text/css" href = "../style.css"/>
+</head>
+<body onload = "setupSite()" id = "body">
+
+<!-- MODIFY -->
+<section id = "logBody" class = "mainSection">
+    <!--TO MODIFY -->
+    <h1 class = "logTitle">Let's go</h1>
+
+    <!--TO MODIFY -->
+    <div class = "logContent">
+        <!-- TO MODIFY (intro) -->
+        Hi everyone! So, yeah, I'm making a game. And, from now on, I want to tell you EVERYTHING about it,
+        since it's basically starting to be one of the most interesting things I'm making in my life
+        (yeah, try to imagine the rest!). Jokes aside, I would like to introduce myself and to tell you how this
+        journey started :)
+
+        <h2 class = "logSubtitle">whoami</h2>
+
+        My name is Nicola and I'm a 19 years old computer science student based in Italy.
+        I started painting when I was 7 years old, so I've always been in close contact with the art world,
+        which is, still nowadays, one of my strongest passions. At the age of 12 (11? 13? I don't remember)
+        I started messing around with FL Studio: at that time I was a huge fan of mainstream EDM music, Skrillex,
+        Nicky Romero, Knife Party and Avicii were some of my favourite artists, and I still have lots of their songs
+        in my MP3 player. I was trying to emulate their stuff, while trying to find my style and while making from
+        2 to 3 paintings during a year. I then started studying computer science at school, until I learnt enough
+        to understand the power of videogames as an expressive mean.
+
+        <div class = "captionedImage">
+            <img class = "singleLogImage" src = "../imgs/0000letsgo/gris.jpg"/>
+            <p class = "imageCaption">I find Gris to be one of the best examples of videogames as an art form.</p>
+        </div>
+
+        <h2 class = "logSubtitle">Genesis</h2>
+
+        There's a quite clever guy in my class, who invested lots of money in cryptocurrencies and stuff like that,
+        in order become reach and finally be able to achieve its goals. That was not the only way for him to try to
+        make money, so he once asked me if I was willing to help him make a videogame: he would have done the programming
+        and I would have taken care of art and music. So I said "Ok, how are we going to split our earnings?" and he replied
+        "You'll get 15%" O.O
+
+        Seriously? 15% for all the art and music? I tried to convince him to be more reasonable, but there was no way to
+        change his idea. So I told myself "Well, I guess it's time for me to make something big". I spent something like 2
+        months practicing pixel art (which is a style that I love, probably also for the bit of nostalgic feel that it
+        comes with) and making researches about the subject. And I eventually came up with this.
+
+        <div class = "captionedImage">
+            <img class = "singleLogImage" src = "../imgs/0000letsgo/column.png"/>
+            <p class = "imageCaption">Pretty horrible, uh?</p>
+        </div>
+
+        I guess we all started somewhere. Luckily, I feel like I've improved a lot since then, I made a few simple
+        projects with Unity and now I feel confident enough to definitely start my journey.
+
+        <h2 class = "logSubtitle">Ascent</h2>
+
+        I want to sum up all the things I love in my life into a videogame: its name will be Ascent. The story is
+        already pretty much decided, the mechanics are clear in my mind. What is still missing are...well,
+        lots of scripts and art. And since I'm very interested in how other people solve problems,
+        I thought that, maybe, I'm not the only one. I will absolutely tell you more in future posts,
+        in the meantime I would like to present you Alice, the main character of Ascent.
+
+        <div class = "captionedImage">
+            <img class = "singleLogImage" src = "../imgs/portrait.png"/>
+            <p class = "imageCaption">Say hello!</p>
+        </div>
+
+        Our journey begins now. And I hope you will join me in this adventure :)
+
+        <br><br><span class = "logDate">05/14/2019</span>
+    </div>
+</section>
+
+<section id = "comments">
+    <div id = "addComment">
+        <form id = "commentForm" method="POST" action="https://dev.staticman.net/v3/entry/github/npalomba/ascent-devlog/master/comments">
+            <!-- e.g. "2016-01-02-this-is-a-post" -->
+            <input type="hidden" name="fields[thread]" value="2">
+            <input name="options[slug]" type="hidden" value="{{ page.slug }}">
+            <p>Add a comment!</p>
+            <textarea name="fields[message]" id = "commentArea" style = "width:100%;height:100px;"></textarea>
+            <p class = "inline">Name</p>
+            <input name="fields[name]" type="text" class = "inline">
+            <p class = "inline">E-mail</p>
+            <input name="fields[email]" type="email" class = "inline">
+
+            <button type="submit">Submit comment</button>
+        </form>
+    </div>
+
+    <div id = "existingComments">
+    </div>
+</section>
+</body>
+</html>
