@@ -35,7 +35,7 @@ function addLogs() {
                 let imgURL = logParams[0];
                 let title = logParams[1];
                 let content = logParams[2];
-                let url = logParams[3];
+                let url = "logs/" + logParams[3];
 
                 content = content.substr(0, 168);
                 content += "...";
