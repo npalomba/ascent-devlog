@@ -90,8 +90,8 @@ function setupSideNav() {
 
         for (let i=0; i<recentPostsLines.length; i++) {
             let postFields = recentPostsLines[i].split(",");
-            let url = postFields[0] + ".html";
-            let title = "logs/" + postFields[1];
+            let url = "logs/" + postFields[0] + ".html";
+            let title = postFields[1];
             let imgURL = postFields[2];
 
             /* Creating container with background image */
