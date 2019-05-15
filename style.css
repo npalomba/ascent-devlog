@@ -367,6 +367,10 @@ div.logContent{
     text-align: justify;
 }
 
+div.logContent a{
+    color:#5bafda;
+}
+
 h1.logTitle {
     font-size:50pt;
     width:100%;

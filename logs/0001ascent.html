@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <!--TO MODIFY -->
-    <meta property = "commentThread" content = "2"/>
+    <meta property = "commentThread" content = "6"/>
     <!--TO MODIFY -->
     <title>Log Title - Ascent</title>
 
@@ -58,7 +58,7 @@
         You've probably already guessed that Ascent will be a Metroidvania with procedurally generated elements. My plan is
         to use a fixed map, that I will personally design, along with a procedurally generated area (one for each hand-drawn zone).
         As the player completes those levels, their size and their difficulty increases, but items become rarer and so is
-        the final rewards; submissions will also be set in these areas.
+        the final rewards; secondary missions will also be set in these areas.
         <br><br>
         I've already started building a level generator! At the moment it is a pretty basic tool, it just generates rooms and
         corridors, but, for example, doesn't handle collisions between rooms. Which may not necessarily be a bad thing, but
@@ -66,45 +66,44 @@
 
 
         <div class = "captionedImage">
-            <img class = "singleLogImage" src = "../imgs/portrait.png"/>
-            <p class = "imageCaption">This is a test caption for the above picture</p>
+            <img class = "singleLogImage" src = "../imgs/0001ascent/generator.png"/>
+            <p class = "imageCaption">A simple level created by my <a href = "https://github.com/unsettledgames/RoomGenerator">generator</a></p>
         </div>
 
-        Integer condimentum quis odio vitae lobortis. Vivamus rhoncus nisi fermentum nisl maximus imperdiet.
-        Mauris vel tempus tortor, sit amet ultricies leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        In dictum felis ante, sed fermentum nunc scelerisque eu. Praesent eget egestas tellus, sed dictum justo.
-        Donec arcu nibh, posuere eleifend bibendum ut, bibendum in purus. Vestibulum id scelerisque eros, et tristique nibh.
-        Phasellus ipsum elit, pellentesque posuere aliquam in, porta non massa. Pellentesque non elit non massa dictum sodales.
-        Vivamus blandit arcu ligula, sit amet posuere tellus tempus vitae.
-        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-        Nullam rutrum et lorem nec varius. Sed laoreet non ipsum at maximus.
-        Praesent iaculis interdum porta.
+        The procedurally generated areas will be accessible from the last settlements, inhabited by the last people on Earth: in these places
+        you will be able to purchase items that will be useful for your journey, and you will also meet new people, that may help you
+        in your adventure...or not :P
 
-        <h2 class = "logSubtitle">Insert subtitle here</h2>
+        <h2 class = "logSubtitle">Ascent: mechanics</h2>
 
-        Quisque ut libero molestie, gravida neque nec, commodo purus.
-        Suspendisse faucibus fringilla odio nec interdum.
-        Vivamus commodo arcu lobortis risus tincidunt elementum.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Donec euismod iaculis facilisis.
-        Nam erat ante, ultricies eu malesuada ac, blandit sed dolor.
-        Maecenas vestibulum enim hendrerit sodales tincidunt.
-        Vestibulum quis elit vestibulum, sagittis orci venenatis, efficitur dui.
+        The game will be based on two main features: Alice's shield and hacking. With the shield, the player can both shot projectiles
+        and defend him/herself (in Italian we don't have this distinction!). Additionally, it is possible to parry attacks and send
+        them back to the opponent: a smart use of the shield can really make your life easier.
 
         <div class = "captionedImage">
-            <img class = "singleLogImage" src = "../imgs/portrait.png"/>
-            <p class = "imageCaption">This is a test caption for the above picture</p>
+            <img class = "singleLogImage" src = "../imgs/0001ascent/idle.png"/>
+            <p class = "imageCaption">Alice with her shield</p>
         </div>
 
-        Curabitur dapibus nisl eu ex tempor, a viverra nisl dapibus.
-        Vestibulum posuere nec nisl quis ultrices. Suspendisse iaculis dolor et porta tempus.
-        Ut vitae pulvinar neque. Aenean a volutpat libero.
-        Nulla pellentesque, arcu sit amet porta porttitor, lacus magna accumsan lorem, vulputate viverra est enim ultrices mauris.
-        Sed feugiat diam neque, at commodo neque mattis vel. Nunc diam libero, ultricies et iaculis et, auctor quis nisl.
-        Nam et tristique augue. Sed quis tincidunt turpis, vel tincidunt ante. Integer mollis velit a elit gravida cursus.
-        Aliquam dapibus nunc eget orci vehicula, non auctor mi aliquet. Integer semper enim sit amet auctor lacinia.
+        The second mechanic, which must be still carefully designed, is hacking. If you succeed in solving a little challenge,
+        you will be able to stun an enemy and, if you've been very fast or precise, you can also take control of it. That means
+        that you are able to use the attacks of the enemy that you're controlling: of course, the more powerful a foe is, the
+        more difficult the puzzle will be.<br>
+        Hacking will also be very useful to manipulate the environment and to get rid of obstacles that may get in your way.
 
-        <br><br>05/14/2019
+        <h2 class = "logSubtitle">Story</h2>
+
+        I don't really want to tell you anything particular about the story. I'm sadistic. Joking, I just think that it will be a better experience
+        if you find out about the plot on your own :) <br>
+        All I can say is that Alice is the hero that will have to save humankind. Why? Because of a disaster. Where? Here, on Earth.
+        When? In an unfortunately not too far future.
+
+        <h2 class = "logSubtitle">End of log 1</h2>
+        So, what do you think about my ideas? I'm very determined in implementing them, and I can't wait to make more progress in this
+        project. I hope that you feel the same :)
+        <br>Feel free to tell me your opinion in the comment section! Have a nice day, see you in the next log!
+
+        <br><br><span class = "logDate">05/15/2019</span>
     </div>
 </section>
 
@@ -112,7 +111,7 @@
     <div id = "addComment">
         <form id = "commentForm" method="POST" action="https://dev.staticman.net/v3/entry/github/npalomba/ascent-devlog/master/comments">
             <!-- e.g. "2016-01-02-this-is-a-post" -->
-            <input type="hidden" name="fields[thread]" value="2">
+            <input type="hidden" name="fields[thread]" value="6">
             <input name="options[slug]" type="hidden" value="{{ page.slug }}">
             <p>Add a comment!</p>
             <textarea name="fields[message]" id = "commentArea" style = "width:100%;height:100px;"></textarea>
