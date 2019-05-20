@@ -1,2 +1,3 @@
+0002givemelife,Give Me Life,imgs/0002givemelife/animations.gif
 0001ascent,Ascent,imgs/Logo.gif
 0000letsgo,Let's go!,imgs/portrait.png
