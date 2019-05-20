@@ -191,7 +191,7 @@ section#recentPosts div.recentPost:hover h3{
 div.recentPostBackground{
     z-index:2;
     height:300px;
-    width:30%;
+    width:28.2%;
     position:relative;
     display:table;
     float:left;
