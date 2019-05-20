@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3794cbfd-9411-4abe-a203-42cb37151e98" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/allLogs" beforeDir="false" afterPath="$PROJECT_DIR$/allLogs" afterDir="false" />
-    </list>
+    <list default="true" id="3794cbfd-9411-4abe-a203-42cb37151e98" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +87,7 @@
         <entry file="file://$PROJECT_DIR$/allLogs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="23">
-              <caret line="1" column="69" selection-start-line="1" selection-start-column="69" selection-end-line="1" selection-end-column="69" />
+              <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -253,16 +251,15 @@
       <workItem from="1557814235365" duration="6859000" />
       <workItem from="1557829649760" duration="2864000" />
       <workItem from="1557861313767" duration="5153000" />
-      <workItem from="1557901828841" duration="891000" />
+      <workItem from="1557901828841" duration="1549000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64707000" />
+    <option name="totallyTimeSpent" value="65365000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24609375" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -604,7 +601,7 @@
     <entry file="file://$PROJECT_DIR$/allLogs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
-          <caret line="1" column="69" selection-start-line="1" selection-start-column="69" selection-end-line="1" selection-end-column="69" />
+          <caret line="1" column="49" selection-start-line="1" selection-start-column="49" selection-end-line="1" selection-end-column="49" />
         </state>
       </provider>
     </entry>
