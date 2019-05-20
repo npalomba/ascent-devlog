@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--TO MODIFY -->
+    <meta property = "commentThread" content = "7"/>
+    <!--TO MODIFY -->
+    <title>Give me life - Ascent</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type = "text/javascript" src = "../scripts/siteSetupper.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src = "../scripts/pageAnimations.js"></script>
+    <script src = "../scripts/utility.js"></script>
+    <script type = "text/javascript" src = "../scripts/commentLoader.js"></script>
+    <!-- Adds all the meta tags for the social network share previews -->
+    <script type = "text/javascript" src = "../scripts/socialThumbnailAdder.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed:300,400" rel="stylesheet">
+    <link rel = "stylesheet" type = "text/css" href = "../style.css"/>
+</head>
+<body onload = "setupSite()" id = "body">
+
+<!-- MODIFY -->
+<section id = "logBody" class = "mainSection">
+    <!--TO MODIFY -->
+    <h1 class = "logTitle">Give me life</h1>
+
+    <!--TO MODIFY -->
+    <div class = "logContent">
+        <!-- TO MODIFY (intro) -->
+        During the past two weeks I spent quite a lot of time making animations for my main character; I started with the
+        basic actions, like idle, running, jumping and shooting. This is how they look like at the moment.
+
+        <div class = "captionedImage">
+            <img class = "singleLogImage" src = "../imgs/0002givemelife/idle.gif"/>
+            <p class = "imageCaption">The idle animation...</p>
+        </div>
+
+        <div class = "captionedImage">
+            <img class = "singleLogImage" src = "../imgs/0002givemelife/run.gif"/>
+            <p class = "imageCaption">...run animation (this took the most!)...</p>
+        </div>
+
+        <div class = "captionedImage">
+            <img class = "singleLogImage" src = "../imgs/0002givemelife/shooting.gif"/>
+            <p class = "imageCaption">...shooting idle animation...</p>
+        </div>
+
+        <div class = "captionedImage">
+            <img class = "singleLogImage" src = "../imgs/0002givemelife/jump.gif"/>
+            <p class = "imageCaption">...and, finally, jump animaton!</p>
+        </div>
+
+        Of course I also drew the same animations for Alice facing left. I had enough animations to start putting
+        them together in Unity :)
+
+
+        <h2 class = "logSubtitle">Mecanim</h2>
+
+        Unity has a very nice, built-in, animation system called Mecanim: it is perfect for 3D games and in many 2D
+        cases, but I found out that it may not be the best choice, if you're animating pixel art like me.<br><br>
+        I think the best thing about Mecanim is that it allows the user to set a transition time between two animations,
+        in order to make the change look smoother. The problem is that, since pixel art is hand-drawn frame by frame, it is
+        impossible to automatically interpolate between animations (you would have to draw transitions for EVERY case, which
+        is impossible): one of the main features of Mecanim is quite useless in my case. Plus, last time I tried making a
+        relatively big project, my animation tree looked like this:
+
+        <div class = "captionedImage">
+            <img class = "singleLogImage" src = "../imgs/0002givemelife/animator.png"/>
+            <p class = "imageCaption">Basically a huge mess</p>
+        </div>
+
+        I must also specify that I did not use blend trees or layers, so maybe it could have looked a bit better.
+
+        <h2 class = "logSubtitle">So what's the alternative?</h2>
+        I created a script called "PlayerAnimationManager", which is in charge of managing animations. It contains some
+        flags (for example, facesRight, isGrounded, isShooting, speed) which store data about what the player is currently
+        doing; these flags are updated in the PlayerController script once a frame in a specific function (UpdateAnimator).<br><br>
+        The PlayerAnimationManager, then, depending on the value of the flags, plays the right animation. In the following snippet
+        you can see that, if the player is not moving and it is grounded, the animator will play the idle animation.
+
+        <div class = "captionedImage">
+            <img class = "singleLogImage" src = "../imgs/0002givemelife/animator.png"/>
+            <p class = "imageCaption">And it's pretty much the same with the other animations: if certain conditions are
+            met, play a certain animation</p>
+        </div>
+
+        I would also like to say that I had to use a special flag (forcedAnimation) used to force the execution of an animation,
+        even though other conditions could be met so that a different animation could be playing at the same time.<br>
+        Take as an example the landing animation: it must be played as soon as the player touches the ground after a jump, but,
+        actually, depending on the speed of the player, the run or the idle animation should be played. Since the entire
+        animation process is wrapped around an if which checks the forcedAnimation flag, I use a special Play method which sets
+        forcedAnimation to true (preventing other animations from playing), waits for the end of the animation and then resets
+        forcedAnimation to false.
+
+        <div class = "captionedImage">
+            <img class = "singleLogImage" src = "../imgs/0002givemelife/forcedAnimation.png"/>
+            <p class = "imageCaption">The Play method is a coroutine, so it easily lets me handle wait times</p>
+        </div>
+
+        <h2 class = "logSubtitle">Conclusions</h2>
+
+        I find this method pretty comfortable for me, and I think it is also good for scalability, if you are provided with
+        a solid base. I also think that it is really good for objects with lots of animations on which you need to have an
+        absolute control (in this case my main character)
+
+        <div class = "captionedImage">
+            <img class = "singleLogImage" src = "../imgs/0002givemelife/.png"/>
+            <p class = "imageCaption">This is a test caption for the above picture</p>
+        </div>
+
+        Curabitur dapibus nisl eu ex tempor, a viverra nisl dapibus.
+        Vestibulum posuere nec nisl quis ultrices. Suspendisse iaculis dolor et porta tempus.
+        Ut vitae pulvinar neque. Aenean a volutpat libero.
+        Nulla pellentesque, arcu sit amet porta porttitor, lacus magna accumsan lorem, vulputate viverra est enim ultrices mauris.
+        Sed feugiat diam neque, at commodo neque mattis vel. Nunc diam libero, ultricies et iaculis et, auctor quis nisl.
+        Nam et tristique augue. Sed quis tincidunt turpis, vel tincidunt ante. Integer mollis velit a elit gravida cursus.
+        Aliquam dapibus nunc eget orci vehicula, non auctor mi aliquet. Integer semper enim sit amet auctor lacinia.
+
+        <br><br>20/05/2019
+    </div>
+</section>
+
+<section id = "comments">
+    <div id = "addComment">
+        <form id = "commentForm" method="POST" action="https://dev.staticman.net/v3/entry/github/npalomba/ascent-devlog/master/comments">
+            <!-- e.g. "2016-01-02-this-is-a-post" -->
+            <input type="hidden" name="fields[thread]" value="7">
+            <input name="options[slug]" type="hidden" value="{{ page.slug }}">
+            <p>Add a comment!</p>
+            <textarea name="fields[message]" id = "commentArea" style = "width:100%;height:100px;"></textarea>
+            <p class = "inline">Name</p>
+            <input name="fields[name]" type="text" class = "inline">
+            <p class = "inline">E-mail</p>
+            <input name="fields[email]" type="email" class = "inline">
+
+            <button type="submit">Submit comment</button>
+        </form>
+    </div>
+
+    <div id = "existingComments">
+    </div>
+</section>
+</body>
+</html>
