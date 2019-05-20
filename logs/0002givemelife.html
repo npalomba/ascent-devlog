@@ -103,23 +103,27 @@
         <h2 class = "logSubtitle">Conclusions</h2>
 
         I find this method pretty comfortable for me, and I think it is also good for scalability, if you are provided with
-        a solid base. I also think that it is really good for objects with lots of animations on which you need to have an
-        absolute control (in this case my main character)
+        a solid base. I also think that it is really suitable for objects with lots of animations on which you need to have an
+        absolute control (in this case my main character), but it may not be the best choice if you have just a few animations.<br>
+        For example, if I had an enemy which has only two animations (e.g. a left idle and a right idle), Mecanim would have been
+        a better solution, because it is a bit more straightforward (plus I don't want to create an AnimationManager for every
+        animated object in my game!).<br><br>
+        That's all for today, I hope that you learnt something new and that you enjoyed the reading! You can find a TL;DR after
+        this paragraph. Have a nice day, see you in the next log :)
 
-        <div class = "captionedImage">
-            <img class = "singleLogImage" src = "../imgs/0002givemelife/.png"/>
-            <p class = "imageCaption">This is a test caption for the above picture</p>
-        </div>
+        <br><br><span class = "logDate">20/05/2019</span>
 
-        Curabitur dapibus nisl eu ex tempor, a viverra nisl dapibus.
-        Vestibulum posuere nec nisl quis ultrices. Suspendisse iaculis dolor et porta tempus.
-        Ut vitae pulvinar neque. Aenean a volutpat libero.
-        Nulla pellentesque, arcu sit amet porta porttitor, lacus magna accumsan lorem, vulputate viverra est enim ultrices mauris.
-        Sed feugiat diam neque, at commodo neque mattis vel. Nunc diam libero, ultricies et iaculis et, auctor quis nisl.
-        Nam et tristique augue. Sed quis tincidunt turpis, vel tincidunt ante. Integer mollis velit a elit gravida cursus.
-        Aliquam dapibus nunc eget orci vehicula, non auctor mi aliquet. Integer semper enim sit amet auctor lacinia.
-
-        <br><br>20/05/2019
+        <h2 class = "logSubtitle">TL;DR</h2>
+        <ul>
+            <li>Unity's built-in animation system (Mecanim) may not be the best choice for pixel-art</li>
+            <li>Instead, try to create your own animation manager for complex animated objects, so that you can easily
+            add new animations and modify transitions</li>
+            <li>Wrap the AnimationManager Update loop in an if which checks the status of a variable, which is set
+             to true if you want to force a certain animation to play, and to false as soon as that animation
+            finished playing</li>
+            <li>Use Mecanim to animate pixel art animations with a few animations (simple enemies, background elements),
+                build your own controller if you want to animate more complex stuff (in my case, the main character)</li>
+        </ul>
     </div>
 </section>
 
