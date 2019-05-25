@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--TO MODIFY -->
+    <meta property = "commentThread" content = "8"/>
+    <!--TO MODIFY -->
+    <title>Tile unifier - Ascent</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script type = "text/javascript" src = "../scripts/siteSetupper.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src = "../scripts/pageAnimations.js"></script>
+    <script src = "../scripts/utility.js"></script>
+    <script type = "text/javascript" src = "../scripts/commentLoader.js"></script>
+    <!-- Adds all the meta tags for the social network share previews -->
+    <script type = "text/javascript" src = "../scripts/socialThumbnailAdder.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed:300,400" rel="stylesheet">
+    <link rel = "stylesheet" type = "text/css" href = "../style.css"/>
+</head>
+<body onload = "setupSite()" id = "body">
+
+<!-- MODIFY -->
+<section id = "logBody" class = "mainSection">
+    <!--TO MODIFY -->
+    <h1 class = "logTitle">Tile unifier</h1>
+
+    <!--TO MODIFY -->
+    <div class = "logContent">
+        <!-- TO MODIFY (intro) -->
+        As soon as I wrote the first version of my player controller, I stumbled on a weird bug. Alice would sometimes
+        get stuck between tiles, even though I had attached a material with 0 friction to her colliders and to the colliders
+        of the tiles.
+
+        <div class = "captionedImage">
+            <img class = "singleLogImage" src = "../imgs/0003tileunifier/stuck.gif"/>
+            <p class = "imageCaption">She would just get stuck between the two box colliders</p>
+        </div>
+
+        <div class = "captionedImage">
+            <img class = "singleLogImage" src = "../imgs/0003tileunifier/colliders.png"/>
+        </div>
+
+        Creating my levels in Aseprite (the pixel art editor I use) and then adding colliders via Unity would have been just
+        a temporary solution, and only for the levels made by me: the procedurally generated parts are necessarily made of
+        single tiles, so, eventually, I would have got the same problem.
+
+        <h2 class = "logSubtitle">Changing collider</h2>
+
+        I partially solved the problem by changing the collider used by Alice to trigger contact with the ground, which,
+        at the beginning, was a box collider. A circle collider (or a capsule collider, the concept is the same) helped a lot:
+        since they have no edges, they can't get stuck between tiles.
+
+        <div class = "captionedImage">
+            <img class = "singleLogImage" src = "../imgs/0003tileunifier/circle.png"/>
+        </div>
+
+        But, exactly when I thought the problem was definitely solved, I discovered a new bug: sometimes, the run animation is interrupted
+        and then immediately resumed. This means Alice still gets stuck between tiles, but probably the force applied to the sprite is enough
+        to unstuck her. <br>
+        This would be so easy, if only we used a single, continuous collider! The great thing is that it is possible to unify
+        the single tiles' colliders.
+
+        <h2 class = "logSubtitle">Tile unifier!</h2>
+
+        Each tile prefab comes with a TileUnifier, which is a script that automatically creates a single collider starting from multiple
+        PolygonCollider2Ds. The idea is pretty naive, but it unexpectedly works! I basically divide a level between rows and columns: the first
+        tile extends its collider so that it incorporates the other ones.<br>
+
+        Firstly, every tile checks if it has other tiles around it, so that it can understand whether it's part of a wall, of the ground
+        or of the ceiling and if it is the first tile of the series.
+        In that case, it throws longer and longer raycasts until it hasn't reached the end of the tile series. Every time a tile is hit,
+        its collider is disabled and the first one's is extended.
+        <br>
+        Here's the final result:
+
+        <div class = "captionedImage">
+            <img class = "singleLogImage" src = "../imgs/0003tileunifier/fullcolider.png"/>
+            <p class = "imageCaption">As you can see, the collider now includes the other tiles</p>
+        </div>
+
+        This was a pretty short log, but I think this is a pretty useful tricks if you have to deal with multple colliders in tile-based
+        levels. I hope you learnt something new, have a nice day and see you in the next log!
+
+        <br><br><span class = "logDate">25/05/2019</span>
+    </div>
+</section>
+
+<section id = "comments">
+    <div id = "addComment">
+        <form id = "commentForm" method="POST" action="https://dev.staticman.net/v3/entry/github/npalomba/ascent-devlog/master/comments">
+            <!-- e.g. "2016-01-02-this-is-a-post" -->
+            <input type="hidden" name="fields[thread]" value="8">
+            <input name="options[slug]" type="hidden" value="{{ page.slug }}">
+            <p>Add a comment!</p>
+            <textarea name="fields[message]" id = "commentArea" style = "width:100%;height:100px;"></textarea>
+            <p class = "inline">Name</p>
+            <input name="fields[name]" type="text" class = "inline">
+            <p class = "inline">E-mail</p>
+            <input name="fields[email]" type="email" class = "inline">
+
+            <button type="submit">Submit comment</button>
+        </form>
+    </div>
+
+    <div id = "existingComments">
+    </div>
+</section>
+</body>
+</html>
